@@ -1,0 +1,39 @@
+/* Lab 2 – custom styles on top of Bootstrap 5.3 */
+
+/* ---------- Navbar layout: logo | links (center) | cart ---------- */
+.site-logo { font-weight: 700; letter-spacing: .5px; }
+.cart-link { position: relative; color: #fff; display: inline-flex; align-items: center; gap: .35rem; text-decoration: none; }
+.cart-link:hover { color: #9ec5fe; }
+
+/* Phone (<768px): logo left, cart + hamburger right, menu drops below */
+.nav-right { margin-left: auto; }
+
+/* Tablet and up (>=768px): three-part row using flex + order.
+   Logo and cart each take equal flexible space so the links sit truly centered. */
+@media (min-width: 768px) {
+  .site-logo      { flex: 1 1 0; order: 1; }
+  .navbar-collapse{ flex: 0 0 auto; order: 2; }
+  .nav-right      { flex: 1 1 0; order: 3; justify-content: flex-end; }
+  .navbar-toggler { display: none; }
+}
+
+/* ---------- Product grid (CSS Grid) ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;          /* phone: 1 column */
+  gap: 1.25rem;
+}
+@media (min-width: 768px)  { .product-grid { grid-template-columns: repeat(2, 1fr); } }  /* tablet: 2 */
+@media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }  /* desktop: 4 */
+
+.product-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .5rem;
+  padding: 1rem; border: 1px solid #dee2e6; border-radius: .5rem; background: #fff;
+}
+.product-img {
+  width: 100%; aspect-ratio: 4 / 3; border-radius: .375rem;
+  background: repeating-linear-gradient(45deg, #e9ecef, #e9ecef 10px, #f8f9fa 10px, #f8f9fa 20px);
+}
+.product-title { font-size: 1.1rem; margin: .25rem 0 0; }
+.product-price { margin: 0; color: #495057; }
+.product-card .btn { margin-top: auto; }
