@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Thread Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="promo-bar">Free delivery on orders over $50</div>
+      <nav class="navbar">
+        <div class="container top-nav">
+          <div class="links">
+            <a href="index.html#products">WOMEN</a>
+            <a href="index.html#products">MEN</a>
+            <a href="index.html#about">ABOUT</a>
+          </div>
+          <a class="navbar-brand logo" href="index.html">THREAD STORE</a>
+          <div class="actions">
+            <a href="#contact">HELP</a>
+            <a class="cart cart-link" href="checkout.html">CART <span class="cart-count">0</span></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container checkout-page">
+      <p class="back"><a href="index.html#products">Clothing</a> / Checkout</p>
+      <h1>Checkout</h1>
+      <form class="checkout-form" action="order-confirmation.html" method="get">
+        <fieldset>
+          <legend>Contact</legend>
+          <div class="form-row">
+            <label for="full-name">Full name</label>
+            <input id="full-name" name="full-name" type="text" autocomplete="name" placeholder=" " required />
+            <small class="field-error">Enter your full name.</small>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder=" " required />
+            <small class="field-error">Enter a valid email address.</small>
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" pattern="03[0-9]{2}-[0-9]{7}" placeholder=" " title="Use format 03XX-XXXXXXX" required />
+            <small class="field-error">Use phone format 03XX-XXXXXXX.</small>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Delivery</legend>
+          <div class="form-row">
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder=" " required />
+            <small class="field-error">Enter your delivery address.</small>
+          </div>
+          <div class="form-row">
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+              <option value="" selected disabled>Select a city</option>
+              <option>Lahore</option>
+              <option>Islamabad</option>
+              <option>Karachi</option>
+              <option>Faisalabad</option>
+              <option>Rawalpindi</option>
+            </select>
+            <small class="field-error">Choose a delivery city.</small>
+          </div>
+          <div class="form-row">
+            <label for="delivery-date">Delivery date</label>
+            <input id="delivery-date" name="delivery-date" type="date" min="2026-10-29" max="2026-11-05" required />
+            <small class="field-error">Choose a date from October 29 to November 5, 2026.</small>
+          </div>
+        </fieldset>
+        <button class="btn shop-btn checkout-submit" type="submit">Place Order</button>
+      </form>
+    </main>
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-links">
+          <a href="index.html#products">Clothing</a>
+          <a href="index.html#about">About us</a>
+          <a href="mailto:abdul.hadi.sec@example.com">Contact us</a>
+        </div>
+        <p>Language: English &nbsp; | &nbsp; Currency: USD</p>
+        <p>&copy; 2026 Thread Store. Abdul Hadi.</p>
+      </div>
+    </footer>
+    <script src="checkout.js" defer></script>
+  </body>
+</html>
