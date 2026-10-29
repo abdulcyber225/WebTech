@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #0f1b2d;
+  --teal: #14b8a6;
+  --teal-dark: #0d7f74;
+  --text: #1c2430;
+  --muted: #5b6675;
+  --line: #d9e0e8;
+  --tag-bg: #e6f6f4;
+}
+
+body {
+  margin: 0;
+  padding: 24px 12px;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: #e9eef3;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(15, 27, 45, 0.12);
+}
+
+/* Header */
+.top-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 36px;
+  background: var(--navy);
+  color: #fff;
+  border-bottom: 5px solid var(--teal);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid var(--teal);
+  background: #17283f;
+  color: var(--teal);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.header-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.role {
+  margin: 2px 0 8px;
+  color: var(--teal);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1rem;
+}
+
+.info {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #c9d3df;
+}
+
+/* Body */
+.resume {
+  padding: 28px 36px 12px;
+}
+
+section {
+  margin-bottom: 26px;
+}
+
+h2 {
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-bottom: 2px solid var(--teal);
+}
+
+.about-text {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.entry-row p {
+  margin: 0;
+}
+
+.entry-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.second-row {
+  margin-top: 2px;
+}
+
+.meta {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92rem;
+  color: var(--teal-dark);
+  text-align: right;
+}
+
+.note {
+  margin: 8px 0 0;
+  font-size: 0.98rem;
+  color: var(--muted);
+}
+
+/* Experience entries get a rule on the left like a timeline */
+.entry {
+  margin-bottom: 18px;
+  padding-left: 16px;
+  border-left: 3px solid var(--teal);
+}
+
+.entry-list {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+
+.entry-list li {
+  margin-bottom: 4px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.project {
+  margin-bottom: 12px;
+}
+
+.project p {
+  margin: 0;
+}
+
+/* Skills as tags */
+.skill-group {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.skill-label {
+  min-width: 100px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  padding: 3px 12px;
+  font-size: 0.95rem;
+  background: var(--tag-bg);
+  color: var(--teal-dark);
+  border: 1px solid #bfe9e4;
+  border-radius: 999px;
+}
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+}
+
+.contact-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 1rem;
+}
+
+.contact-list strong {
+  min-width: 78px;
+  color: var(--navy);
+}
+
+.contact-list a {
+  color: var(--teal-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--teal);
+}
+
+footer {
+  padding: 14px 36px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 700px) {
+  .top-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 16px;
+  }
+
+  .resume {
+    padding: 22px 16px 8px;
+  }
+
+  .entry-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .meta {
+    text-align: left;
+  }
+
+  .skill-group {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: #fff;
+  }
+
+  .page {
+    box-shadow: none;
+  }
+
+  .top-header {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume {
+    padding-bottom: 0;
+  }
+
+  footer {
+    padding: 8px 36px 10px;
+  }
+
+  section,
+  .entry {
+    break-inside: avoid;
+  }
+}
